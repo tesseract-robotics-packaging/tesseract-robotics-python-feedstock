@@ -29,7 +29,8 @@ outputs:
         - eigen
         - console_bridge
         - boost-cpp
-        - taskflow
+        - python
+        - numpy
         - tesseract-robotics-common
         - tesseract-robotics-environment
         - tesseract-robotics-command-language
@@ -40,13 +41,18 @@ outputs:
         - eigen
         - console_bridge
         - boost-cpp
-        - taskflow
+        - python
+        - numpy
         - tesseract-robotics-common
         - tesseract-robotics-environment
         - tesseract-robotics-command-language
         - tesseract-robotics-motion-planners
         - tesseract-robotics-time-parameterization
         - tesseract-robotics-process-managers
+
+build:
+  skip: true # [py<38]
+  number: 0
 
 about:
   home: https://github.com/tesseract-robotics/tesseract_python
