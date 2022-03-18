@@ -1,3 +1,34 @@
+diff --git a/tesseract_python/CMakeLists.txt b/tesseract_python/CMakeLists.txt
+index ebd50e4..d0c19fd 100644
+--- a/tesseract_python/CMakeLists.txt
++++ b/tesseract_python/CMakeLists.txt
+@@ -23,6 +23,7 @@ else()
+   add_compile_options(/bigobj)
+ endif()
+ 
++find_package(jsoncpp REQUIRED)
+ find_package(tesseract_motion_planners REQUIRED)
+ find_package(tesseract_common REQUIRED)
+ find_package(tesseract_geometry REQUIRED)
+@@ -141,15 +142,9 @@ if(SETUPTOOLS_DEB_LAYOUT)
+   set(SETUPTOOLS_ARG_EXTRA "--install-layout=deb")
+ endif()
+ 
+-if (${PYTHON_VERSION_MAJOR} LESS 3)
+-    install(CODE "message(STATUS \"Running setup.py in ${CMAKE_CURRENT_BINARY_DIR}/python\")
+-    execute_process(COMMAND python2 setup.py install -f
+---root=/ --prefix=${CMAKE_INSTALL_PREFIX} ${SETUPTOOLS_ARG_EXTRA} --single-version-externally-managed WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/python)")
+-else()
+-  install(CODE "message(STATUS \"Running setup.py in ${CMAKE_CURRENT_BINARY_DIR}/python\")
+-  execute_process(COMMAND ${PYTHON_EXECUTABLE} setup.py install -f
+-  --root=/ --prefix=${CMAKE_INSTALL_PREFIX} ${SETUPTOOLS_ARG_EXTRA} --single-version-externally-managed WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/python)")
+-endif()
++install(CODE "message(STATUS \"Running setup.py in ${CMAKE_CURRENT_BINARY_DIR}/python\")
++  execute_process(COMMAND ${PYTHON_EXECUTABLE} -m pip install --no-deps
++  --ignore-installed . WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/python)")
+ 
+ 
+   # Allows Colcon to find non-Ament packages when using workspace underlays
 diff --git a/tesseract_python/swig/eigen_geometry.i b/tesseract_python/swig/eigen_geometry.i
 index 022f897..de779ec 100644
 --- a/tesseract_python/swig/eigen_geometry.i

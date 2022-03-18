@@ -8,7 +8,7 @@ source:
     folder: src
     patches:
       - tesseract_python_fix.patch
-      
+
 outputs:
   - name: tesseract-robotics-python
     script: build_tesseract_python.sh # [unix]
@@ -34,6 +34,8 @@ outputs:
         - boost-cpp
         - python
         - numpy
+        - setuptools
+        - pip
         - tesseract-robotics-common
         - tesseract-robotics-environment
         - tesseract-robotics-command-language
@@ -46,6 +48,7 @@ outputs:
         - boost-cpp
         - python
         - numpy
+        - setuptools
         - tesseract-robotics-common
         - tesseract-robotics-environment
         - tesseract-robotics-command-language
