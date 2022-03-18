@@ -1,3 +1,16 @@
+diff --git a/tesseract_python/swig/eigen_geometry.i b/tesseract_python/swig/eigen_geometry.i
+index 022f897..de779ec 100644
+--- a/tesseract_python/swig/eigen_geometry.i
++++ b/tesseract_python/swig/eigen_geometry.i
+@@ -217,7 +217,7 @@ namespace Eigen
+         Isometry3d operator* (const Quaterniond& other);
+         Isometry3d operator* (const Isometry3d& other);
+         Isometry3d operator* (const Translation3d& other);
+-        Eigen::Matrix4d operator* (const Eigen::Matrix4d& other);
++        //Eigen::Matrix4d operator* (const Eigen::Matrix4d& other);
+ 
+         void rotate(const Eigen::Matrix3d& rotation);
+         void rotate(const AngleAxisd& rotation);
 diff --git a/tesseract_python/swig/tesseract_swig_include.i b/tesseract_python/swig/tesseract_swig_include.i
 index 87dde6c..edc6808 100644
 --- a/tesseract_python/swig/tesseract_swig_include.i
