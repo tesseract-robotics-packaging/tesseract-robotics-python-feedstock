@@ -1,0 +1,63 @@
+package:
+  name: tesseract-robotics-python-all
+  version: 0.0.3
+
+source:
+  - git_url: https://github.com/tesseract-robotics/tesseract_planning.git
+    git_rev: 43e77ece6386eed6e616db46661727f33fed88e9
+    folder: src
+outputs:
+  - name: tesseract-robotics-python
+    script: build_tesseract_python.sh # [unix]
+    script: bld_tesseract_python.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('mesa-dri-drivers') }}  # [linux]
+        - pkg-config
+        - swig
+      host:
+        - eigen
+        - console_bridge
+        - boost-cpp
+        - taskflow
+        - tesseract-robotics-common
+        - tesseract-robotics-environment
+        - tesseract-robotics-command-language
+        - tesseract-robotics-motion-planners
+        - tesseract-robotics-time-parameterization
+        - tesseract-robotics-process-managers
+      run:
+        - eigen
+        - console_bridge
+        - boost-cpp
+        - taskflow
+        - tesseract-robotics-common
+        - tesseract-robotics-environment
+        - tesseract-robotics-command-language
+        - tesseract-robotics-motion-planners
+        - tesseract-robotics-time-parameterization
+        - tesseract-robotics-process-managers
+
+about:
+  home: https://github.com/tesseract-robotics/tesseract_python
+  summary: Python bindings for Tesseract planning framework
+  license: Apache-2.0 AND BSD-3-Clause AND BSD-2-Clause
+  # license_file: 
+  #   - src/LICENSE
+  #   - src/LICENSE.Apache-2.0
+  #   - src/LICENSE.BSD-3-Clause
+  #   - src/LICENSE.BSD-2-Clause
+
+extra:
+  recipe-maintainers:
+    - johnwason
