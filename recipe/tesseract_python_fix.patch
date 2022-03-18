@@ -1,0 +1,12 @@
+diff --git a/tesseract_python/swig/tesseract_swig_include.i b/tesseract_python/swig/tesseract_swig_include.i
+index 87dde6c..edc6808 100644
+--- a/tesseract_python/swig/tesseract_swig_include.i
++++ b/tesseract_python/swig/tesseract_swig_include.i
+@@ -71,6 +71,7 @@ namespace std {
+ %include "eigen_types.i"
+ 
+ %{
++#include <type_traits>
+ namespace std
+ {
+   template<typename T> struct remove_reference<swig::SwigPySequence_Ref<T>>
