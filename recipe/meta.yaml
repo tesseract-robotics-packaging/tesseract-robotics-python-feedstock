@@ -55,10 +55,18 @@ outputs:
         - tesseract-robotics-motion-planners
         - tesseract-robotics-time-parameterization
         - tesseract-robotics-process-managers
+    test:
+      files:
+        - test_planning_server.py
+      requires:
+        - pytest
+        - tesseract-robotics-python
+      script: run_test_tesseract_python.sh # [unix]
+      script: run_test_tesseract_python.bat # [win]
 
 build:
   skip: true # [py<38]
-  number: 0
+  number: 1
 
 about:
   home: https://github.com/tesseract-robotics/tesseract_python
