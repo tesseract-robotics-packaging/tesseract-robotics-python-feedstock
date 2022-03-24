@@ -6,6 +6,7 @@ cmake -GNinja ^
   -DCMAKE_BUILD_TYPE:STRING=Release ^
   -DBUILD_SHARED_LIBS=ON ^
   -DUSE_MSVC_RUNTIME_LIBRARY_DLL=ON ^
+  -DPYTHON_EXECUTABLE=%PYTHON% ^
   -S src\tesseract_python ^
   -B build_tesseract_python_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
