@@ -66,7 +66,7 @@ outputs:
 
 build:
   skip: true # [py<38]
-  number: 1
+  number: 2
 
 about:
   home: https://github.com/tesseract-robotics/tesseract_python
