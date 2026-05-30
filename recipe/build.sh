@@ -12,6 +12,7 @@ cmake -GNinja \
   -DTESSERACT_ENABLE_EXAMPLES=OFF \
   -DCMAKE_VERBOSE_MAKEFILE=ON \
   -DPYTHON_EXECUTABLE=$PYTHON \
+  -DCMAKE_CXX_SCAN_FOR_MODULES=OFF\
   -S src/tesseract_python \
   -B build_dir
 
