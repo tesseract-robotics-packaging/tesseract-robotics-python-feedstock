@@ -9,13 +9,15 @@ c_compiler_version:
 channel_sources:
 - tesseract-robotics,conda-forge
 channel_targets:
-- tesseract-robotics
+- tesseract-robotics main
 console_bridge:
 - '1.0'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
+libboost_devel:
+- '1.88'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
