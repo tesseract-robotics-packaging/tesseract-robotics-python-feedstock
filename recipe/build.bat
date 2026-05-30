@@ -19,7 +19,7 @@ if %errorlevel% neq 0 exit %errorlevel%
 cmake --build build_dir --config Release -j 4
 if %errorlevel% neq 0 exit %errorlevel%
 
-%PYTHON% -m pip install --no-deps --ignore-installed -vvv .\build_dir\python
+%PYTHON% -m pip install --no-deps --ignore-installed --no-build-isolation -vvv .\build_dir\python
 if %errorlevel% neq 0 exit %errorlevel%
-%PYTHON% -m pip install --no-deps --ignore-installed -vvv .\src\tesseract_viewer_python
+%PYTHON% -m pip install --no-deps --ignore-installed --no-build-isolation -vvv .\src\tesseract_viewer_python
 if %errorlevel% neq 0 exit %errorlevel%
