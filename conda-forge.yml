@@ -1,16 +1,20 @@
 github:
   user_or_org: tesseract-robotics
 
-channels:
-  targets:
-    - ["tesseract-robotics", "main"]
-
 provider:
   linux: github_actions
-  osx: None
+  osx: github_actions
   win: github_actions
-  linux_aarch64: None
+  linux_aarch64: github_actions
   linux_ppc64le: None
+
+build_platform:
+  linux_aarch64: linux_64
+  osx_arm64: osx_64
 
 github_actions:
   store_build_artifacts: True
+
+conda_build:
+  pkg_format: '2'
+conda_build_tool: rattler-build
