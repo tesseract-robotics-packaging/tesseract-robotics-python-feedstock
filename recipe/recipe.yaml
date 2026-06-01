@@ -1,12 +1,15 @@
 schema_version: 1
 
+context:
+  version: "0.35.0"
+
 package:
   name: tesseract-robotics-python
-  version: "0.35.0a1"
+  version: ${{ version }}
 
 source:
-  - url: https://github.com/tesseract-robotics/tesseract_python/archive/8012d4e9366681358e827fbedfbc1fb7321220c1.tar.gz
-    sha256: b4a0f9acd34a165d9a00bd3d9ed08829c0a684544d78cc87d2bd6e932b762227
+  - url: https://github.com/tesseract-robotics/tesseract_python//archive/refs/tags/${{ version }}.tar.gz
+    sha256: 73ce06dd6b7e00aba97939b9af7dc51395eb6252e424f6cd42c82c5205d72098
     file_name: source.tar.gz
 
 build:
